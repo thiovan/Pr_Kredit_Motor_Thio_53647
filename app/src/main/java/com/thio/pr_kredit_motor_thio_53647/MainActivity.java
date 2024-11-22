@@ -1,24 +1,40 @@
 package com.thio.pr_kredit_motor_thio_53647;
 
+import android.app.TabActivity;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.widget.TabHost;
 
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends TabActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        Resources res = getResources(); // Resource object untuk mendapatkan gambar
+        TabHost tabHost = getTabHost(); // activity TabHost
+        TabHost.TabSpec spec; // menggunakan TabSpec untuk tab lain
+        Intent intent; // Menggunakan Intent untuk tab yg lain
+
+        // Membuat intent digunakan untuk menampilkan activity ke dalam Tab yg
+        intent = new Intent().setClass(this, HomeActivity.class);
+
+        // inisialisasi TabSpec untuk tab yg lain dan menambahkan ke TabHost
+        spec = tabHost.newTabSpec("Home").setIndicator("Home" ).setContent(intent);
+        tabHost.addTab(spec);
+
+        // Melakukan kepada tab yang lain
+        intent = new Intent().setClass(this, TransactionActivity.class);
+        spec = tabHost.newTabSpec("Transaction").setIndicator("Transaction")
+                .setContent(intent);
+        tabHost.addTab(spec);
+
+        intent = new Intent().setClass(this, AboutActivity.class);
+        spec = tabHost.newTabSpec("About").setIndicator("About")
+                .setContent(intent);
+        tabHost.addTab(spec);
+        tabHost.setCurrentTab(3);
+
     }
 }
