@@ -7,7 +7,7 @@
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
-/*!50503 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
@@ -16,8 +16,20 @@
 
 
 -- Dumping database structure for db_android_1
-CREATE DATABASE IF NOT EXISTS `db_android_1` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE IF NOT EXISTS `db_android_1` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `db_android_1`;
+
+-- Dumping structure for table db_android_1.motor
+CREATE TABLE IF NOT EXISTS `motor` (
+  `idmotor` int NOT NULL AUTO_INCREMENT,
+  `kdmotor` varchar(10) NOT NULL,
+  `nama` varchar(30) DEFAULT NULL,
+  `harga` int DEFAULT NULL,
+  PRIMARY KEY (`idmotor`),
+  UNIQUE KEY `kdmotor` (`kdmotor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- Data exporting was unselected.
 
 -- Dumping structure for table db_android_1.petugas
 CREATE TABLE IF NOT EXISTS `petugas` (
@@ -27,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `petugas` (
   `jabatan` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`idpetugas`),
   UNIQUE KEY `kdpetugas` (`kdpetugas`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Data exporting was unselected.
 

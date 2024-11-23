@@ -12,7 +12,7 @@ switch ($operasi) {
   case "view":
     /* Source code untuk Menampilkan petugas */
 
-    $query_tampil_petugas = mysqli_query($koneksi, "SELECT * FROM petugas") or die(mysqli_error());
+    $query_tampil_petugas = mysqli_query($koneksi, "SELECT * FROM petugas") or die(mysqli_error($koneksi));
     $data_array = array();
     while ($data = mysqli_fetch_assoc($query_tampil_petugas)) {
       $data_array[] = $data;
@@ -25,19 +25,18 @@ switch ($operasi) {
     @$kdpetugas = $_GET['kdpetugas'];
     @$nama = $_GET['nama'];
     @$jabatan = $_GET['jabatan'];
-    $query_insert_data = mysqli_query($koneksi, "INSERT INTO petugas (kdpetugas, nama, jabatan) VALUES('$kdpetugas',
-'$nama', '$jabatan')");
+    $query_insert_data = mysqli_query($koneksi, "INSERT INTO petugas (kdpetugas, nama, jabatan) VALUES('$kdpetugas', '$nama', '$jabatan')");
     if ($query_insert_data) {
       echo "Data Berhasil Disimpan";
     } else {
-      echo "Error Insert petugas " . mysqli_error();
+      echo "Error Insert petugas " . mysqli_error($koneksi);
     }
     break;
 
   case "get_petugas_by_kdpetugas":
     /* Source code untuk Edit data dan mengirim data berdasarkan kdpetugas yang diminta */
     @$idpetugas = $_GET['idpetugas'];
-    $query_tampil_petugas  = mysqli_query($koneksi,  "SELECT	*	FROM petugas WHERE idpetugas='$idpetugas'") or die(mysqli_error());
+    $query_tampil_petugas  = mysqli_query($koneksi,  "SELECT	*	FROM petugas WHERE idpetugas='$idpetugas'") or die(mysqli_error($koneksi));
     $data_array = array();
     $data_array = mysqli_fetch_assoc($query_tampil_petugas);
     echo "[" . json_encode($data_array) . "]";
