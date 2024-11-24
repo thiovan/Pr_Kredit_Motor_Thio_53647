@@ -4,23 +4,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="12dp"
+    android:background="@drawable/bg"
     android:orientation="vertical"
+    android:padding="12dp"
     tools:context=".DataPetugasActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_marginBottom="32dp"
+        app:srcCompat="@drawable/data_petugas_logo" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center"
-        android:text="Data Petugas" />
+        android:text="DATA PETUGAS"
+        android:textSize="24sp" />
 
     <Button
         android:id="@+id/btTambahPetugas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="KlikbtTambahPetugas"
-        android:text="Tambah Petugas" />
+        android:text="Tambah Petugas"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/tambah_petugas" />
 
     <Button
         android:id="@+id/btRefreshDataPetugas"
@@ -29,7 +41,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="klikRefreshDataMahasiswa"
-        android:text="Refresh" />
+        android:text="Refresh"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/refresh" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -48,7 +62,9 @@
                 android:id="@+id/tbPetugas"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="1dp"></TableLayout>
+                android:layout_marginTop="1dp"
+                android:background="#FFFFFF"
+                android:stretchColumns="*" />
         </ScrollView>
     </HorizontalScrollView>
 

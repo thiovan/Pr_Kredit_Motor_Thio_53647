@@ -4,19 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:background="@drawable/bg"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:id="@+id/judulHOme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
         android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        android:text="Halaman Home"
-        android:textSize="16sp"
+        android:paddingTop="30dp"
+        android:paddingBottom="10dp"
+        android:text="BERANDA"
+        android:textSize="24sp"
         android:textStyle="bold" />
 
     <Button
@@ -24,18 +32,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="8dp"
-        android:text="Data Petugas" />
+        android:text="Data Petugas"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/data_petugas" />
 
     <Button
         android:id="@+id/btDataMotorHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data Motor" />
+        android:text="Data Motor"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/data_motor" />
 
     <Button
         android:id="@+id/btDataKreditorHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data Kreditor" />
+        android:text="Data Kreditor"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/data_kreditor" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/chewy"
+        android:gravity="bottom|center"
+        android:lines="2"
+        android:padding="36dp"
+        android:text="Dengan Kredit Oto ID,\nMakin Mudah Miliki Motor Idaman"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="20sp" />
 
 </LinearLayout>

@@ -51,6 +51,8 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
             StrictMode.setThreadPolicy(policy);
         }
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Pemberian Nama komponen
         tbPetugas = (TableLayout) findViewById(R.id.tbPetugas);
         btTambahPetugas = (Button) findViewById(R.id.btTambahPetugas);
@@ -199,6 +201,7 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
         }
 
         LinearLayout layoutInput = new LinearLayout(this);
+        layoutInput.setPadding(56, 56,56,56);
         layoutInput.setOrientation(LinearLayout.VERTICAL);
 
         // buat id tersembunyi di alertbuilder
@@ -264,6 +267,7 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
     public void tambahPetugas() {
         /* layout akan ditampilkan pada AlertDialog */
         LinearLayout layoutInput = new LinearLayout(this);
+        layoutInput.setPadding(56, 56,56,56);
         layoutInput.setOrientation(LinearLayout.VERTICAL);
 
         final EditText editKdPetugas = new EditText(this);
@@ -322,6 +326,12 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
 
             }
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
 }

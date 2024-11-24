@@ -47,6 +47,8 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
             StrictMode.setThreadPolicy(policy);
         }
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //Pemberian Nama komponen
         tbMotor = (TableLayout) findViewById(R.id.tbMotor);
         btTambahMotor = (Button) findViewById(R.id.btTambahMotor);
@@ -196,6 +198,7 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
         }
 
         LinearLayout layoutInput = new LinearLayout(this);
+        layoutInput.setPadding(56, 56,56,56);
         layoutInput.setOrientation(LinearLayout.VERTICAL);
 
         // buat id tersembunyi di alertbuilder
@@ -203,6 +206,7 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
         viewKdmotor.setText("Kode Motor =" + String.valueOf(kdmotorEdit));
         viewKdmotor.setTextColor(Color.WHITE);
         viewKdmotor.setTextSize(20);
+        viewKdmotor.setVisibility(View.GONE);
         layoutInput.addView(viewKdmotor);
 
         //membuat edit text di Allert builder
@@ -236,6 +240,8 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
 
                         Toast.makeText(DataMotorActivity.this, laporan, Toast.LENGTH_SHORT).show();
 
+                        finish();
+                        startActivity(getIntent());
                     }
 
                 });
@@ -255,6 +261,7 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
     public void tambahMotor() {
         /* layout akan ditampilkan pada AlertDialog */
         LinearLayout layoutInput = new LinearLayout(this);
+        layoutInput.setPadding(56, 56,56,56);
         layoutInput.setOrientation(LinearLayout.VERTICAL);
         final EditText editKdMotor = new EditText(this);
         editKdMotor.setHint("KdMotor");
@@ -311,6 +318,12 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
                 deleteMotor(idmotor);
             }
         }
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
     }
 
 }
