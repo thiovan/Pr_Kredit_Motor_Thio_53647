@@ -17,6 +17,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
 
+import android.view.ContextThemeWrapper;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -29,6 +30,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.AdapterView.OnItemLongClickListener;
+
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 
 public class DataPetugasActivity extends AppCompatActivity implements OnClickListener {
@@ -144,19 +148,21 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
                 barisTabel.addView(viewJabatan);
 
                 //Membuat Button Edit pada Baris
-                buttonEdit.add(i, new Button(this));
+                buttonEdit.add(i, new MaterialButton(this));
                 buttonEdit.get(i).setId(Integer.parseInt(idpetugas));
                 buttonEdit.get(i).setTag("Edit");
                 buttonEdit.get(i).setText("Edit");
                 buttonEdit.get(i).setOnClickListener(this);
+                buttonEdit.get(i).setBackgroundColor(getColor(R.color.green_700));
                 barisTabel.addView(buttonEdit.get(i));
 
                 //Membuat Button Delete pada Baris
-                buttonDelete.add(i, new Button(this));
+                buttonDelete.add(i, new MaterialButton(this));
                 buttonDelete.get(i).setId(Integer.parseInt(idpetugas));
                 buttonDelete.get(i).setTag("Delete");
                 buttonDelete.get(i).setText("Delete");
                 buttonDelete.get(i).setOnClickListener(this);
+                buttonDelete.get(i).setBackgroundColor(getColor(R.color.red_700));
                 barisTabel.addView(buttonDelete.get(i));
 
                 tbPetugas.addView(barisTabel, new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT,
