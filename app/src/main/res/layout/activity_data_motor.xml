@@ -49,7 +49,8 @@
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="top">
+        android:layout_gravity="top"
+        android:layout_marginTop="16dp">
 
         <ScrollView
             android:id="@+id/verticalScrollView"

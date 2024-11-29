@@ -1,6 +1,7 @@
 package com.thio.pr_kredit_motor_thio_53647;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.graphics.drawable.DrawableContainerCompat;
 
 import java.util.ArrayList;
 
@@ -14,6 +15,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.StrictMode;
 
@@ -216,25 +218,33 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
         viewKdpetugas.setBackgroundColor(Color.TRANSPARENT);
         viewKdpetugas.setTextColor(Color.WHITE);
         viewKdpetugas.setTextSize(20);
+        viewKdpetugas.setVisibility(View.GONE);
         layoutInput.addView(viewKdpetugas);
 
         //membuat edit text di Allert builder
         final EditText editIdPetugas = new EditText(this);
+        editIdPetugas.setCompoundDrawablesWithIntrinsicBounds(R.drawable.number,0,0,0);
+        editIdPetugas.setCompoundDrawablePadding(16);
         editIdPetugas.setText(idpetugasEdit);
         layoutInput.addView(editIdPetugas);
 
         //membuat edit text di Allert builder
         final EditText editNama = new EditText(this);
+        editNama.setCompoundDrawablesWithIntrinsicBounds(R.drawable.data_petugas,0,0,0);
+        editNama.setCompoundDrawablePadding(16);
         editNama.setText(namaEdit);
         layoutInput.addView(editNama);
 
         //membuat edit text di Allert builder
         final EditText editJabatan = new EditText(this);
+        editJabatan.setCompoundDrawablesWithIntrinsicBounds(R.drawable.jabatan,0,0,0);
+        editJabatan.setCompoundDrawablePadding(16);
         editJabatan.setText(jabatanEdit);
         layoutInput.addView(editJabatan);
 
         AlertDialog.Builder builderEditPetugas = new AlertDialog.Builder(this);
-        builderEditPetugas.setTitle("Update Petugas");
+        builderEditPetugas.setIcon(R.drawable.edit_data);
+        builderEditPetugas.setTitle("EDIT PETUGAS");
         builderEditPetugas.setView(layoutInput);
         builderEditPetugas.setPositiveButton("Update", new DialogInterface.OnClickListener() {
 
@@ -277,18 +287,25 @@ public class DataPetugasActivity extends AppCompatActivity implements OnClickLis
         layoutInput.setOrientation(LinearLayout.VERTICAL);
 
         final EditText editKdPetugas = new EditText(this);
+        editKdPetugas.setCompoundDrawablesWithIntrinsicBounds(R.drawable.number,0,0,0);
+        editKdPetugas.setCompoundDrawablePadding(16);
         editKdPetugas.setHint("KdPetugas");
         layoutInput.addView(editKdPetugas);
+
         final EditText editNama = new EditText(this);
+        editNama.setCompoundDrawablesWithIntrinsicBounds(R.drawable.data_petugas,0,0,0);
+        editNama.setCompoundDrawablePadding(16);
         editNama.setHint("Nama");
         layoutInput.addView(editNama);
 
         final EditText editJabatan = new EditText(this);
-        editJabatan.setHint("jabatan");
+        editJabatan.setCompoundDrawablesWithIntrinsicBounds(R.drawable.jabatan,0,0,0);
+        editJabatan.setCompoundDrawablePadding(16);
+        editJabatan.setHint("Jabatan");
         layoutInput.addView(editJabatan);
         AlertDialog.Builder builderInsertPetugas = new AlertDialog.Builder(this);
-        //builderInsertPetugas.setIcon(R.drawable.batagrams);
-        builderInsertPetugas.setTitle("Insert Petugas");
+        builderInsertPetugas.setIcon(R.drawable.add_data);
+        builderInsertPetugas.setTitle("TAMBAH PETUGAS");
         builderInsertPetugas.setView(layoutInput);
         builderInsertPetugas.setPositiveButton("Insert", new
                 DialogInterface.OnClickListener() {

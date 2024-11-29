@@ -26,6 +26,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+
 public class DataMotorActivity extends AppCompatActivity implements OnClickListener {
     //Inisialisasi Objek + Variabel + Class
     Motor motor = new Motor();
@@ -143,19 +145,21 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
                 barisTabel.addView(viewHarga);
 
                 //Membuat Button Edit pada Baris
-                buttonEdit.add(i, new Button(this));
+                buttonEdit.add(i, new MaterialButton(this));
                 buttonEdit.get(i).setId(Integer.parseInt(idmotor));
                 buttonEdit.get(i).setTag("Edit");
                 buttonEdit.get(i).setText("Edit");
                 buttonEdit.get(i).setOnClickListener(this);
+                buttonEdit.get(i).setBackgroundColor(getColor(R.color.green_700));
                 barisTabel.addView(buttonEdit.get(i));
 
                 //Membuat Button Delete pada Baris
-                buttonDelete.add(i, new Button(this));
+                buttonDelete.add(i, new MaterialButton(this));
                 buttonDelete.get(i).setId(Integer.parseInt(idmotor));
                 buttonDelete.get(i).setTag("Delete");
                 buttonDelete.get(i).setText("Delete");
                 buttonDelete.get(i).setOnClickListener(this);
+                buttonDelete.get(i).setBackgroundColor(getColor(R.color.red_700));
                 barisTabel.addView(buttonDelete.get(i));
 
                 tbMotor.addView(barisTabel, new TableLayout.LayoutParams(TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT));
@@ -215,16 +219,20 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
 
         //membuat edit text di Allert builder
         final EditText editNama = new EditText(this);
+        editNama.setCompoundDrawablesWithIntrinsicBounds(R.drawable.data_motor,0,0,0);
+        editNama.setCompoundDrawablePadding(16);
         editNama.setText(namaEdit);
         layoutInput.addView(editNama);
 
         //membuat edit text di Allert builder
         final EditText editHarga = new EditText(this);
+        editHarga.setCompoundDrawablesWithIntrinsicBounds(R.drawable.money,0,0,0);
+        editHarga.setCompoundDrawablePadding(16);
         editHarga.setText(hargaEdit);
         layoutInput.addView(editHarga);
 
         AlertDialog.Builder builderEditMotor = new AlertDialog.Builder(this);
-        builderEditMotor.setTitle("Update Motor");
+        builderEditMotor.setTitle("EDIT MOTOR");
         builderEditMotor.setView(layoutInput);
         builderEditMotor.setPositiveButton("Update", new
                 DialogInterface.OnClickListener() {
@@ -264,18 +272,26 @@ public class DataMotorActivity extends AppCompatActivity implements OnClickListe
         layoutInput.setPadding(56, 56,56,56);
         layoutInput.setOrientation(LinearLayout.VERTICAL);
         final EditText editKdMotor = new EditText(this);
+        editKdMotor.setCompoundDrawablesWithIntrinsicBounds(R.drawable.number,0,0,0);
+        editKdMotor.setCompoundDrawablePadding(16);
         editKdMotor.setHint("KdMotor");
         layoutInput.addView(editKdMotor);
 
         final EditText editNama = new EditText(this);
+        editNama.setCompoundDrawablesWithIntrinsicBounds(R.drawable.data_motor,0,0,0);
+        editNama.setCompoundDrawablePadding(16);
         editNama.setHint("Nama");
         layoutInput.addView(editNama);
+
         final EditText editHarga = new EditText(this);
+        editHarga.setCompoundDrawablesWithIntrinsicBounds(R.drawable.money,0,0,0);
+        editHarga.setCompoundDrawablePadding(16);
         editHarga.setHint("harga");
         layoutInput.addView(editHarga);
 
         AlertDialog.Builder builderInsertMotor = new AlertDialog.Builder(this);
-        builderInsertMotor.setTitle("Insert Motor");
+        builderInsertMotor.setIcon(R.drawable.add_data);
+        builderInsertMotor.setTitle("TAMBAH MOTOR");
         builderInsertMotor.setView(layoutInput);
         builderInsertMotor.setPositiveButton("Insert", new
                 DialogInterface.OnClickListener() {
