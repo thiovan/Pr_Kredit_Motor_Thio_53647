@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="10dp"
+    android:background="@drawable/bg"
+    android:padding="10dp"
     tools:context=".TransactionActivity">
 
     <TextView
@@ -13,6 +14,9 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="TRANSAKSI"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="24sp"
+        android:layout_marginTop="16dp"
         android:textStyle="bold" />
 
     <Button
@@ -21,7 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_alignLeft="@+id/textView1"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="10dp"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/contract_edit"
         android:text="Transaksi Pengajuan" />
 
     <Button
@@ -31,6 +37,8 @@
         android:layout_below="@+id/btPengajuanKredit"
         android:layout_alignLeft="@+id/btPengajuanKredit"
         android:layout_alignRight="@+id/btPengajuanKredit"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/add_card"
         android:text="Pembayaran Angsuran" />
 
     <Button
@@ -40,6 +48,8 @@
         android:layout_below="@+id/btPembayaranAngsuran"
         android:layout_alignLeft="@+id/btPembayaranAngsuran"
         android:layout_alignRight="@+id/btPembayaranAngsuran"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/contract"
         android:text="Data Pengajuan Kredit" />
 
     <Button
@@ -49,6 +59,8 @@
         android:layout_below="@+id/btDataPengajuanKredit"
         android:layout_alignLeft="@+id/btDataPengajuanKredit"
         android:layout_alignRight="@+id/btDataPengajuanKredit"
-        android:text="Data Pembyaran Angsuran" />
+        android:text="Data Pembayaran Angsuran"
+        app:icon="@drawable/credit_card"
+        app:cornerRadius="24dp" />
 
 </RelativeLayout>
