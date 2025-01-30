@@ -1,10 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/scrollView1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:padding="10dp"
     tools:context=".PengajuanKreditActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/poppins_bold"
+            android:gravity="center"
+            android:text="PENGAJUAN KREDIT"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Id Kreditor"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <Spinner
+            android:id="@+id/SpinnerNamaKreditor"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="12dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/TextView01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Kreditor"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/TextNamaKreditor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/TextAlamatKreditor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="Alamat" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kode Motor"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Spinner
+            android:id="@+id/SpinnerNamaMotor"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="12dp"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Motor :"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textNamaMotor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:text="-" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga :"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textHargaMotor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0." />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DP / Uang Muka"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <EditText
+            android:id="@+id/editUangMuka"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bunga /Tahun"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <EditText
+            android:id="@+id/editBunga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lama Angsuran (Bulan)"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <EditText
+            android:id="@+id/editLamaAngsuran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="Hasil Perhitungan :"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <Button
+            android:id="@+id/buttonProsesPengajuanKredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="KlikbuttonProsesPengajuanKredit"
+            app:cornerRadius="24dp"
+            android:text="Proses" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Harga Kredit :"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/textHargaKredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Total Kredit :"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/textTotalKredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Angsuran per Bulan :"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+        <TextView
+            android:id="@+id/textAngsuranPerbulan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <Button
+            android:id="@+id/buttonSimpanPengajuanKredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="KlikbuttonSimpanPengajuanKredit"
+            android:paddingTop="10dp"
+            app:cornerRadius="24dp"
+            android:text="Simpan" />
+
+        <Button
+            android:id="@+id/buttonResetKredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="KlikbuttonResetKredit"
+            app:cornerRadius="24dp"
+            android:text="Reset" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+
+    </LinearLayout>
+
+</ScrollView>

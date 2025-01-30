@@ -59,7 +59,7 @@
         android:id="@+id/btDataKreditorHome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Data Kreditur"
+        android:text="Data Kreditor"
         app:cornerRadius="24dp"
         app:icon="@drawable/data_kreditor" />
 

@@ -28,7 +28,7 @@
         android:layout_marginTop="10dp"
         app:cornerRadius="24dp"
         app:icon="@drawable/contract_edit"
-        android:text="Transaksi Pengajuan" />
+        android:text="Pengajuan Kredit" />
 
     <Button
         android:id="@+id/btPembayaranAngsuran"

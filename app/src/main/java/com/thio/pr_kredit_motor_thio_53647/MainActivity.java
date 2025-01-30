@@ -19,7 +19,6 @@ public class MainActivity extends TabActivity {
 
         // Membuat intent digunakan untuk menampilkan activity ke dalam Tab yg
         intent = new Intent().setClass(this, HomeActivity.class);
-
         // inisialisasi TabSpec untuk tab yg lain dan menambahkan ke TabHost
         spec = tabHost.newTabSpec("Home")
                 .setIndicator("", res.getDrawable(R.drawable.ic_tab_home))

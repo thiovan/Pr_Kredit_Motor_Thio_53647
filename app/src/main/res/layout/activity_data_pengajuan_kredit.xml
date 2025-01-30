@@ -1,10 +1,51 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/bg"
+    android:padding="10dp"
     tools:context=".DataPengajuanKreditActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:fontFamily="@font/poppins_bold"
+        android:gravity="center"
+        android:text="DATA PENGAJUAN KREDIT"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/btRefreshKredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="KlikbtRefreshKredit"
+        app:cornerRadius="24dp"
+        app:icon="@drawable/refresh"
+        android:text="Refresh" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="top">
+
+        <ScrollView
+            android:id="@+id/verticalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top">
+
+            <TableLayout
+                android:id="@+id/tbQueryKredit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:layout_marginTop="1dp"></TableLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+</LinearLayout>
