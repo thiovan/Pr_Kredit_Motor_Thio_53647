@@ -1,4 +1,3 @@
-<img src="screenshot/beranda.png" width="80"/>
 <img src="screenshot/logo.png" width="100"/>
 
 # Kredit Oto ID
@@ -19,6 +18,7 @@ Kredit Oto ID adalah aplikasi berbasis android yang dibangun menggunakan bahasa 
 * Mengelola data kreditor
 * Formulir pengajuan kredit
 * Mengelola data pengajuan kredit
+* Laporan pengajuan kredit berupa PDF
 
 ## Konfigurasi Server Aplikasi
 1. Copy folder jskreditmotor ke direktori XAMPP/Laragon (contoh: www atau htdocs)
